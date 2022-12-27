@@ -73,14 +73,9 @@ int find_specified_number_in_sequence(int number) {
     return current_number % 10;
 }
 
-void print_specified_number_in_sequence(int number) {
-    int specifiedNumberInSequence = find_specified_number_in_sequence(number);
-    printf("%d", specifiedNumberInSequence);
-}
-
 int main() {
     int number;
     scanf("%d", &number);
-    print_specified_number_in_sequence(number);
+    printf("%d", find_specified_number_in_sequence(number));
 }
 
