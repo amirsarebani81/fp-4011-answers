@@ -17,7 +17,7 @@ bool is_in_range_of_ten_to_twenty(int number, int i) { return i == 2 && find_sec
 
 int power(int base, int power) {
     int result = 1;
-    for(int i=0; i < power; i++)
+    for (int i = 0; i < power; i++)
         result *= base;
     return result;
 }
@@ -27,66 +27,86 @@ void print_number_from_one_to_ten(int digit) {
         case 0:
             break;
         case 1:
-            printf("one"); break;
+            printf("one");
+            break;
         case 2:
-            printf("two"); break;
+            printf("two");
+            break;
         case 3:
-            printf("three"); break;
+            printf("three");
+            break;
         case 4:
-            printf("four"); break;
+            printf("four");
+            break;
         case 5:
-            printf("five"); break;
+            printf("five");
+            break;
         case 6:
-            printf("six"); break;
+            printf("six");
+            break;
         case 7:
-            printf("seven"); break;
+            printf("seven");
+            break;
         case 8:
-            printf("eight"); break;
+            printf("eight");
+            break;
         case 9:
-            printf("nine"); break;
+            printf("nine");
+            break;
         default:
-            printf("impossible-small"); break;
+            printf("impossible-small");
+            break;
     }
 }
 
 void print_string_of_digit(int number, int index) {
     int base_ten = power(10, index);//TODO duplicate
     int left_most_digit = find_left_most_digit(number, base_ten) % 10;
-    if(base_ten == 1) {
+    if (base_ten == 1) {
         print_number_from_one_to_ten(left_most_digit);
-    } else if(base_ten == 10) {
+    } else if (base_ten == 10) {
         switch (left_most_digit) {
             case 0:
                 break;
             case 1:
-                printf("ten ");  break;
+                printf("ten ");
+                break;
             case 2:
-                printf("twenty ");   break;
+                printf("twenty ");
+                break;
             case 3:
-                printf("thirty ");   break;
+                printf("thirty ");
+                break;
             case 4:
-                printf("forty ");    break;
+                printf("forty ");
+                break;
             case 5:
-                printf("fifty ");    break;
+                printf("fifty ");
+                break;
             case 6:
-                printf("sixty ");    break;
+                printf("sixty ");
+                break;
             case 7:
-                printf("seventy ");  break;
+                printf("seventy ");
+                break;
             case 8:
-                printf("eighty ");   break;
+                printf("eighty ");
+                break;
             case 9:
-                printf("ninety ");   break;
+                printf("ninety ");
+                break;
             default:
-                printf("impossible-ty");   break;
+                printf("impossible-ty");
+                break;
         }
     } else if (base_ten == 100) {
-        if(left_most_digit != 0) {
+        if (left_most_digit != 0) {
             print_number_from_one_to_ten(left_most_digit);
             printf(" ");
             printf("hundred ");
         }
     } else if (base_ten == 1000) {
-        if(left_most_digit != 0) {
+        if (left_most_digit != 0) {
             print_number_from_one_to_ten(left_most_digit);
             printf(" ");
             printf("thousand ");
@@ -98,25 +118,35 @@ void print_string_of_digit_between_ten_and_twenty(int number) {
     int leftMostDigit = find_first_digit_from_right(number);
     switch (leftMostDigit) {
         case 1:
-            printf("eleven"); break;
+            printf("eleven");
+            break;
         case 2:
-            printf("twelve"); break;
+            printf("twelve");
+            break;
         case 3:
-            printf("thirteen"); break;
+            printf("thirteen");
+            break;
         case 4:
-            printf("fourteen"); break;
+            printf("fourteen");
+            break;
         case 5:
-            printf("fifteen"); break;
+            printf("fifteen");
+            break;
         case 6:
-            printf("sixteen"); break;
+            printf("sixteen");
+            break;
         case 7:
-            printf("seventeen"); break;
+            printf("seventeen");
+            break;
         case 8:
-            printf("eighteen"); break;
+            printf("eighteen");
+            break;
         case 9:
-            printf("nineteen"); break;
+            printf("nineteen");
+            break;
         default:
-            printf("impossible-een"); break;
+            printf("impossible-een");
+            break;
     }
 }
 
@@ -126,18 +156,18 @@ bool ends_with_ten(int number) {
 
 int find_length(int number) {
     int counter;
-    for(counter = 0 ; number!=0 ; counter++)
+    for (counter = 0; number != 0; counter++)
         number /= 10;
     return counter;
 }
 
 void print(int number) {
-    if(number == 0) {
+    if (number == 0) {
         printf("zero");
     }
     int number_length = find_length(number);
-    for(int i=number_length; i > 0; i--) {
-        if(is_in_range_of_ten_to_twenty(number, i) && !ends_with_ten(number)) {
+    for (int i = number_length; i > 0; i--) {
+        if (is_in_range_of_ten_to_twenty(number, i) && !ends_with_ten(number)) {
             print_string_of_digit_between_ten_and_twenty(number);
             return;
         } else {

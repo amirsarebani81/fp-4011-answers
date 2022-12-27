@@ -11,8 +11,8 @@ bool is_prime_slow(int n) {
 }
 
 bool is_prime_medium(int n) {
-    for(int i=2;i*i <= n;i++)
-        if(n%i == 0)
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0)
             return false;
     return true;
 }
@@ -28,11 +28,11 @@ bool is_prime_fast(int n) {
 }
 
 int find_next_prime_number(int number) {
-    if(number == 2)
+    if (number == 2)
         return 3;
-    while(1) {
+    while (1) {
         number += 2;
-        if(
+        if (
             //you can use is_prime_slow, is_prime_medium or is_prime_fast but to get the best performance use is_prime_fast
 //                is_prime_slow(number)
 //                is_prime_medium(number)
@@ -44,7 +44,7 @@ int find_next_prime_number(int number) {
 
 int find_length_of_current_number(int number) {
     int length = 0;
-    while(number > 0) {
+    while (number > 0) {
         number /= 10;
         length++;
     }
@@ -55,12 +55,12 @@ int find_specified_number_in_sequence(int number) {
     int current_number = 2;
     int current_number_length = 1;
     number -= current_number_length;
-    while(number>0) {
+    while (number > 0) {
         current_number = find_next_prime_number(current_number);
         current_number_length = find_length_of_current_number(current_number);
         number -= current_number_length;
     }
-    while(number < 0) {
+    while (number < 0) {
         current_number /= 10;
         number++;
     }
