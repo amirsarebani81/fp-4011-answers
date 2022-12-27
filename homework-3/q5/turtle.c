@@ -40,9 +40,8 @@ void change_position(int move) {
 
 bool movement_not_allowed() {
     if(position_y < MINIMUM_LENGTH_Y || MAXIMUM_LENGTH_Y < position_y
-       || position_x < MINIMUM_LENGTH_X || MAXIMUM_LENGTH_X < position_x) {
+       || position_x < MINIMUM_LENGTH_X || MAXIMUM_LENGTH_X < position_x)
         return true;
-    }
     return false;
 }
 
@@ -53,11 +52,10 @@ bool is_position_of_turtle(int x, int y) {
 void print_screen() {
     for(int y=MINIMUM_LENGTH_Y;y<=MAXIMUM_LENGTH_Y;y++) {
         for(int x=MINIMUM_LENGTH_X;x<=MAXIMUM_LENGTH_X;x++) {
-            if(is_position_of_turtle(x, y)) {
+            if(is_position_of_turtle(x, y))
                 printf("M");
-            } else {
+            else
                 printf("*");
-            }
             printf(" ");
         }
         printf("\n");
@@ -71,9 +69,8 @@ void play_game() {
         print_screen();
         scanf("%d", &move);
         change_position(move);
-        if(movement_not_allowed()) {
+        if(movement_not_allowed())
             change_position(find_opposite(move));
-        }
     } while(move!=0);
 }
 

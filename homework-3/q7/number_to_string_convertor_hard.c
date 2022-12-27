@@ -17,9 +17,8 @@ bool is_in_range_of_ten_to_twenty(int number, int i) { return i == 2 && find_sec
 
 int power(int base, int power) {
     int result = 1;
-    for(int i=0; i < power; i++) {
+    for(int i=0; i < power; i++)
         result *= base;
-    }
     return result;
 }
 

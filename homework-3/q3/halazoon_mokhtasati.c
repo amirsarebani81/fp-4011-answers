@@ -16,9 +16,8 @@ void print_position(int number) {
         }
 
         side++;
-        if(side == 5) {
+        if(side == 5)
             side = 1;
-        }
 
         strike++;
         if(strike == 2) {

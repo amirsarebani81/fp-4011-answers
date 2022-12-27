@@ -11,11 +11,9 @@ bool is_prime_slow(int n) {
 }
 
 bool is_prime_medium(int n) {
-    for(int i=2;i*i <= n;i++) {
-        if(n%i == 0) {
+    for(int i=2;i*i <= n;i++)
+        if(n%i == 0)
             return false;
-        }
-    }
     return true;
 }
 
@@ -23,18 +21,15 @@ bool is_prime_fast(int n) {
     if (n <= 1) return false;
     if (n <= 3) return true;
     if (n % 2 == 0 || n % 3 == 0) return false;
-    for (int i = 5; i * i <= n; i = i + 6) {
-        if (n % i == 0 || n % (i + 2) == 0) {
+    for (int i = 5; i * i <= n; i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
             return false;
-        }
-    }
     return true;
 }
 
 int find_next_prime_number(int number) {
-    if(number == 2) {
+    if(number == 2)
         return 3;
-    }
     while(1) {
         number += 2;
         if(
@@ -42,9 +37,8 @@ int find_next_prime_number(int number) {
 //                is_prime_slow(number)
 //                is_prime_medium(number)
                 is_prime_fast(number)
-                ) {
+                )
             return number;
-        }
     }
 }
 
