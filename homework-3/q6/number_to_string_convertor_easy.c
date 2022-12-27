@@ -13,7 +13,7 @@ int find_length(int number) {
 }
 
 int find_left_most_digit(int number, int baseTen) {
-    return (int) (number / baseTen % 10)  ;
+    return number / baseTen % 10;
 }
 
 int power(int base, int power) {
