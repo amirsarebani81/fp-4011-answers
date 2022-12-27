@@ -125,11 +125,9 @@ bool ends_with_ten(int number) {
 }
 
 int find_length(int number) {
-    int counter = 0;
-    while(number!=0) {
-        number/=10;
-        counter++;
-    }
+    int counter;
+    for(counter = 0 ; number!=0 ; counter++)
+        number /= 10;
     return counter;
 }
 
