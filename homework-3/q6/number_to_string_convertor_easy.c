@@ -19,14 +19,11 @@ int find_left_most_digit(int number, int baseTen) {
 }
 
 int power(int base, int power) {
-    if(power == 1) {
-        return 1;
+    int result = 1;
+    for(int i=0; i < power; i++) {
+        result *= base;
     }
-    int first_base = base;
-    for(int i=0;i<power-2;i++) {
-        base *= first_base;
-    }
-    return base;
+    return result;
 }
 
 void print_number_from_one_to_ten(int digit) {

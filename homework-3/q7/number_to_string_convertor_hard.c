@@ -16,14 +16,11 @@ int find_second_digit_from_right(int number) {
 bool is_in_range_of_ten_to_twenty(int number, int i) { return i == 2 && find_second_digit_from_right(number) == 1; }
 
 int power(int base, int power) {
-    if(power == 1) {
-        return 1;
+    int result = 1;
+    for(int i=0; i < power; i++) {
+        result *= base;
     }
-    int firstBase = base;
-    for(int i=0;i<power-2;i++) {
-        base *= firstBase;
-    }
-    return base;
+    return result;
 }
 
 void print_number_from_one_to_ten(int digit) {
